@@ -1,4 +1,55 @@
-/* página de estilos */
 body {
-    background-color: bisque;
+    background-image: linear-gradient(to bottom right, red, green);;
+    color: #000;
+	font-family: 'Ubuntu', sans-serif; /* agregar un par mas */
+}
+.tituloh1{
+    font-size:4vw;
+}
+.tituloh2{
+    font-size:3vw;
+}
+.tituloh3{
+    font-size:2vw;
+}
+.tituloh4{
+    font-size:1vw;
+}
+.padre{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px;
+}
+.menu .header, .articulo, .lateral, .footer{
+    flex-grow: 1;
+    flex-basis: 100%;
+    padding: 10px;
+}
+@media all and (min-width 600px;){
+    .lateral{flex: 1 1 auto;}
+}
+@media all and (min-width 800px;){
+    .articulo{flex: 2 0 auto;}
+    .articulo{order: 1;}
+    .lateral{order: 2;}
+    .footer{order: 4;}
+}
+div.menu{
+    position: sticky;
+    top: 0;
+    background-color: darkgray;
+}
+.header{
+    background-color: coral;
+}
+.articulo{
+    background-color: cyan;
+}
+.lateral{
+    background-color: yellow;
+}
+.footer{
+    background-color: green;
 }

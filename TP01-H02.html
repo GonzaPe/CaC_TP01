@@ -4,9 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoja 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"><!-- Google Fonts -->
+    <script src="https://kit.fontawesome.com/f5ae7afca2.js" crossorigin="anonymous"></script><!-- FontAwesome -->
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/Healthcare-Diabetes.ico">
+    <title>Calculadora</title>
 </head>
+
 <body>
-    
+    <nav>
+        <!-- define un conjunto de enlaces de navegación -->
+        <div class="menu">
+            <a href="TP01-H01.html"></a><i class="fa-solid fa-timeline"></i></i>Un poco de info</a>
+            <a href="TP01-H02.html"><i class="fa-solid fa-calculator"></i></i>Calculadora</a>
+        </div>
+    </nav>
+
+    <main>
+        <fieldset>
+            <legend>Formulario copado</legend>
+            <p>Casilla de texto para ingresar</p>
+        <form>
+            <input type="text" name="nombre">
+            <input type="submit" value="Enviar">
+        </form>
+        <p>Casilla de texto con límite de 12 caracteres y ancho menor (5)</p>
+        <form>
+            <input type="text" maxlength="12" size="5">
+        </form>
+        <p>Casilla de texto con valor precargado</p>
+        <form>
+            <input type="text" name="nombre" value="Ingrese un nombre">
+        </form>
+        <p>Casilla de texto con ingreso oculto por asteriscos</p>
+        <form>
+            <input type="password" name="nombre">
+        </form>
+        <p>Espacio para comentarios con el comando textarea conteniendo 3 filas y 5 columnas</p>
+        <textarea name="comentarios" rows="3" cols="5">Espacio para comentar...</textarea>
+        <p>Lista de opciones</p>
+        <select name="estaciones">
+            <option>Primavera</option>
+            <option>Verano</option>
+            <option>Otoño</option>
+            <option>Invierno</option>
+        </select>
+        <p>Lista de opciones del tipo radio</p>
+        <input type="radio" name="estacion" value="1">Primavera  <br>
+        <input type="radio" name="estacion" value="2">Verano<br> 
+        <input type="radio" name="estacion" value="3">Otoño  <br>
+        <input type="radio" name="estacion" value="4">Invierno
+        <p>Cajas de validación</p>
+        <input type="checkbox" name="queso">Me gusta el queso.
+        </fieldset>
+    </main>
 </body>
+
+<footer>
+    <!-- pie de página, suele contener información de contacto, mapa del sitio. -->
+    <p>Footer: Copiright &#169;Capitan cavernícola</p>
+    <a href="TP01-H03.html">Contactanos!</a>
+</footer>
+
 </html>
