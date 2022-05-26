@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"><!-- Google Fonts -->
+    <script src="https://kit.fontawesome.com/f5ae7afca2.js" crossorigin="anonymous"></script><!-- FontAwesome -->
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/Healthcare-Diabetes.ico">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <nav>
+        <!-- define un conjunto de enlaces de navegación -->
+        <div class="menu">
+            <a href="01historia.html"><i class="fa-solid fa-timeline"></i>Un poco de info</a>
+            <a href="02calculadora.html"><i class="fa-solid fa-calculator"></i>Calculadora</a>
+        </div>
+    </nav>
+
+    <main>
+        <fieldset>
+            <legend>Calculadora</legend>
+            <p>El objetivo de esta calculadora es el de indicar la cantidad de unidades de insulina que debas aplicarte para mantenerte en un rango entre 90 a 140 unidades de glucosa en sangre de acuerdo a las cantidades de glucosa por unidades de insulina indicadas por el/la profesional a tu cargo.</p>
+            <p>Se buscará que estas unidades estén cercanas a 90 y, de encontrarse dentro del rango, evitar la aplicación de insulina.</p>
+        <form>
+            <fieldset>
+                <legend>Sobre la glucosa</legend>
+                <p>Unidades de glucosa en sangre</p>
+                <input type="number" name="glucosaEnSangre" minlength="1" maxlength="4" placeholder="(solo números)">
+                <p>¿Cuántas unidades de glucosa por unidades de insulina te indicaron?</p>
+                <input type="number" name="glucosaPorInsulina" minlength="1" maxlength="3" placeholder="(solo números)">
+            </fieldset>
+            <fieldset>
+                <legend>Sobre los carbohidratos</legend>
+                <p>Cantidad de carbohidratos a ingerir</p>
+                <input type="number" name="carbohidratos" minlength="1" maxlength="4" placeholder="(solo números)">
+                <a href="https://www.fundaciondiabetes.org/upload/publicaciones_ficheros/71/TABLAHC.pdf" target="_blank">Si tenés dudas sobre la cantidad de carbohidratos clickeá acá</a>
+            </fieldset>
+        </form>
+
+        <input type="submit" value="Enviar">
+        </fieldset>
+    </main>
+</body>
+
+<footer>
+    <!-- pie de página, suele contener información de contacto, mapa del sitio. -->
+    <p>Footer: Copiright &#169;Capitan cavernícola</p>
+    <a href="03contacto.html"></i>Contactanos!<i class="fa-solid fa-envelope"></i></a>
+</footer>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"><!-- Google Fonts -->
+    <script src="https://kit.fontawesome.com/f5ae7afca2.js" crossorigin="anonymous"></script><!-- FontAwesome -->
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/vnd.microsoft.icon" href="img/Healthcare-Diabetes.ico">
+    <title>Contacto</title>
+</head>
+
+<body>
+    <nav>
+        <!-- define un conjunto de enlaces de navegación -->
+        <div class="menu">
+            <a href="01historia.html"><i class="fa-solid fa-timeline"></i>Un poco de info</a>
+            <a href="02calculadora.html"><i class="fa-solid fa-calculator"></i>Calculadora</a>
+        </div>
+    </nav>
+
+    <main>
+        <fieldset>
+            <legend>Contacto</legend>
+        <form name="fcontacto">
+            <p>Nombre(s)*</p>
+            <input type="text" placeholder="(...)" name="nombre">
+            <p>Apellido(s)*</p>
+            <input type="text" placeholder="(...)" name="apellido">
+            <p>Correo electrónico*</p>
+            <input type="text" placeholder="ejemplo@mail.com" name="mail">
+            <p>Teléfono de contacto*</p>
+            <input type="text" placeholder="(num de área sin 0 ni 15)" maxlength="10" name="telefono">
+            <p>Comentarios</p>
+            <textarea name="comentarios" placeholder="(escribe aquí tus comentarios)" rows="10" cols="50" spellcheck="true"></textarea>
+            <br><input type="checkbox" name="suscripcion">Deseo recibir información adicional.
+            <br>
+            <input type="button" value="Enviar" onclick="validacion()">
+        </form>
+        </fieldset>
+    </main>
+
+    <script>
+        function validacion() {
+            if (document.fcontacto.nombre.value.length == 0) {
+                alert("Nos gustaría saber tu nombre!")
+                document.fcontacto.nombre.focus()
+                return 0;
+            }
+            if (document.fcontacto.apellido.value.length == 0) {
+                alert("Nos gustaría saber tu apellido!")
+                document.fcontacto.apellido.focus()
+                return 0;
+            }
+            if (document.fcontacto.mail.value.length == 0 || document.fcontacto.mail.value.indexOf("@") > document.fcontacto.mail.value.lastIndexOf(".")) {
+                alert("Para poder responderte necesitamos un mail válido!")
+                document.fcontacto.mail.focus()
+                return 0;
+            }
+            if (isNaN(document.fcontacto.telefono.value)||document.fcontacto.telefono.value.length!=10) {
+                alert("Nos gustaría saber tu telefono!")
+                document.fcontacto.telefono.focus()
+                return 0;
+            }
+            alert("Muchas gracias por contactarnos, intentaremos responderte a la brevedad.");
+            document.fvalida.submit();
+        }
+    </script>
+</body>
+
+<footer>
+    <!-- pie de página, suele contener información de contacto, mapa del sitio. -->
+    <p>Footer: Copiright &#169;Capitan cavernícola</p>
+</footer>
+</html>
