@@ -23,20 +23,20 @@
         </div>
     </nav>
 
-    <main>
+    <main class="padre">
         <fieldset>
             <legend>Calculadora</legend>
             <p>El objetivo de esta calculadora es el de indicar la cantidad de unidades de insulina que debas aplicarte para mantenerte en un rango entre 90 a 140 unidades de glucosa en sangre de acuerdo a las cantidades de glucosa por unidades de insulina indicadas por el/la profesional a tu cargo.</p>
             <p>Se buscará que estas unidades estén cercanas a 90 y, de encontrarse dentro del rango, evitar la aplicación de insulina.</p>
         <form>
-            <fieldset>
+            <fieldset name="fglucosa">
                 <legend>Sobre la glucosa</legend>
                 <p>Unidades de glucosa en sangre</p>
                 <input id="glucEnSangre" type="number" name="glucosaEnSangre" minlength="1" maxlength="4" placeholder="(solo números)">
                 <p>¿Cuántas gramos de carbohidratos por unidades de insulina te indicaron?</p>
                 <input id="carboPorInsu" type="number" name="carbohidratosPorInsulina" minlength="1" maxlength="3" placeholder="(solo números)">
             </fieldset>
-            <fieldset>
+            <fieldset name="fcarbohidrato">
                 <legend>Sobre los carbohidratos</legend>
                 <p>Cantidad de carbohidratos a ingerir</p>
                 <input id="carboAIngerir" type="number" name="carbohidratos" minlength="1" maxlength="4" placeholder="(solo números)">
@@ -58,10 +58,8 @@
                     insuAplica = 0;
                     finalGlucosa = glucEnSangre + aumentaGluco;
                 }
-                return alert("Aplicate " + insuAplica + " dosis de insulina para quedar en " + parseInt(finalGlucosa) + "de glucosa en sangre");
-                
+                return alert("Aplicate " + insuAplica + " dosis de insulina para quedar en " + parseInt(finalGlucosa) + " de glucosa en sangre");
             }
-
         </script>
 
         <input type="submit" value="Enviar" onclick="obtenerDatos()">

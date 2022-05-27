@@ -8,13 +8,17 @@ h1{
     font-size:20pt;
 }
 h2{
-    font-size:3vw;
+    font-size:16pt;
 }
 h3{
-    font-size:2vw;
+    font-size:12pt;
 }
 h4{
-    font-size:1vw;
+    font-size:8pt;
+}
+
+p{
+    font-size: 12pt;
 }
 .menu{
     flex-grow: 1;
@@ -53,7 +57,7 @@ h4{
 }
 
 .header{
-    background-color: coral;
+    background-color: rgb(255, 199, 126);
 }
 .articulo{
     background-color: cyan;
@@ -62,7 +66,7 @@ h4{
     background-color: yellow;
 }
 .footer{
-    background-color: green;
+    background-color: rgb(109, 196, 109);
 }
 .menu:hover {
     animation-name: cambiarColor;
