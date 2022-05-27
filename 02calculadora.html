@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <nav>
         <div>
             <a class="menu" href="index.html"><i class="fa-solid fa-timeline"></i> Un poco de info</a>
@@ -31,26 +32,54 @@
             <fieldset>
                 <legend>Sobre la glucosa</legend>
                 <p>Unidades de glucosa en sangre</p>
-                <input type="number" name="glucosaEnSangre" minlength="1" maxlength="4" placeholder="(solo números)">
-                <p>¿Cuántas unidades de glucosa por unidades de insulina te indicaron?</p>
-                <input type="number" name="glucosaPorInsulina" minlength="1" maxlength="3" placeholder="(solo números)">
+                <input id="glucEnSangre" type="number" name="glucosaEnSangre" minlength="1" maxlength="4" placeholder="(solo números)">
+                <p>¿Cuántas gramos de carbohidratos por unidades de insulina te indicaron?</p>
+                <input id="carboPorInsu" type="number" name="carbohidratosPorInsulina" minlength="1" maxlength="3" placeholder="(solo números)">
             </fieldset>
             <fieldset>
                 <legend>Sobre los carbohidratos</legend>
                 <p>Cantidad de carbohidratos a ingerir</p>
-                <input type="number" name="carbohidratos" minlength="1" maxlength="4" placeholder="(solo números)">
+                <input id="carboAIngerir" type="number" name="carbohidratos" minlength="1" maxlength="4" placeholder="(solo números)">
                 <a href="https://www.fundaciondiabetes.org/upload/publicaciones_ficheros/71/TABLAHC.pdf" target="_blank">Si tenés dudas sobre la cantidad de carbohidratos clickeá acá</a>
             </fieldset>
         </form>
 
-        <input type="submit" value="Enviar">
+        <script>
+            var insuAplica, finalGlucosa, glucEnSangre, carboPorInsu, carboAIngerir, aumentaGluco;
+            function obtenerDatos(){
+                glucEnSangre = parseInt(document.getElementById("glucEnSangre").value);
+                carboPorInsu = parseInt(document.getElementById("carboPorInsu").value);
+                carboAIngerir = parseInt(document.getElementById("carboAIngerir").value);
+                aumentaGluco = ((50/carboPorInsu) * carboAIngerir);
+                if ((glucEnSangre + aumentaGluco) > 140) {
+                    insuAplica = Math.ceil((glucEnSangre + aumentaGluco - 120)/(50));
+                    finalGlucosa = (glucEnSangre + aumentaGluco) - insuAplica * 50;
+                } else {
+                    insuAplica = 0;
+                    finalGlucosa = glucEnSangre + aumentaGluco;
+                }
+                return alert("Aplicate " + insuAplica + " dosis de insulina para quedar en " + parseInt(finalGlucosa) + "de glucosa en sangre");
+                
+            }
+
+        </script>
+
+        <input type="submit" value="Enviar" onclick="obtenerDatos()">
         </fieldset>
     </main>
 </body>
 
-<footer>
-    <p>Footer: Copiright &#169;Capitan cavernícola</p>
-    <a href="03contacto.html"></i>Contactanos!<i class="fa-solid fa-envelope"></i></a>
+<footer class="footer">
+    <div class="socialNet">
+        <a href="https://www.facebook.com/colgadolandia" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+        <a href="https://twitter.com/1987delmonton" target="_blank"><i class="fa-brands fa-twitter-square"></i></a>
+        <a href="https://www.linkedin.com/in/gonzalo-p%C3%A9rez-30b668111/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/GonzaPe" target="_blank"><i class="fa-brands fa-github-square"></i></a>
+        <a href="https://es.stackoverflow.com/users/284736/gonzalo-perez" target="_blank"><i class="fa-brands fa-stack-overflow"></i></a>
+    </div>
+    <div class="copyright">
+        <p>&#169;2022 Gonzalo Pérez</p>
+    </div>
 </footer>
 
 </html>
