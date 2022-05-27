@@ -37,10 +37,14 @@ body {
     .lateral{order: 2;}
     .footer{order: 4;}
 }
-div.menu{
+.menu{
     position: sticky;
     top: 0;
-    background-color: darkgray;
+    background-color: lightgreen;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
 }
 .header{
     background-color: coral;
@@ -53,4 +57,28 @@ div.menu{
 }
 .footer{
     background-color: green;
+}
+.menu:hover {
+    animation-name: cambiarColor;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cambiarColor {
+    from {
+        background-color: lightgreen;
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+
+    to {
+        background-color: yellow;
+        width: 100px;
+        height: 200px;
+        border: 2px solid blue;
+        border-radius: 5px;
+    }
 }
