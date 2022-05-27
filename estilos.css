@@ -4,26 +4,26 @@ body {
     color: #000;
 	font-family: 'Ubuntu', sans-serif; /* agregar un par mas */
 }
-.tituloh1{
-    font-size:4vw;
+h1{
+    font-size:20pt;
 }
-.tituloh2{
+h2{
     font-size:3vw;
 }
-.tituloh3{
+h3{
     font-size:2vw;
 }
-.tituloh4{
+h4{
     font-size:1vw;
 }
 .padre{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    text-align: center;
+    text-align: justify;
     padding: 10px;
 }
-.menu .header, .articulo, .lateral, .footer{
+.menu, .header, .articulo, .lateral, .footer{
     flex-grow: 1;
     flex-basis: 100%;
     padding: 10px;
@@ -35,7 +35,7 @@ body {
     .articulo{flex: 2 0 auto;}
     .articulo{order: 1;}
     .lateral{order: 2;}
-    .footer{order: 4;}
+    .footer{order: 3;}
 }
 .menu{
     position: sticky;
