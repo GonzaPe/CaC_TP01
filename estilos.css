@@ -5,7 +5,7 @@
     text-align: justify;/*listo */
     padding: 1pt;/*listo */
 }
-.flex-containerh {
+.contenedorMenu {
     display: inline-flex;   /* Esta propiedad define al div como contenedor flex*/
     flex-direction: row; /*listo */
     flex-wrap: nowrap; /*listo */
@@ -13,7 +13,7 @@
     height: 1;  /*listo */
     align-content:flex-start;
 }
-.flex-containerh > a {  /*Utilizamos selectores avanzados en lugar de clases */
+.contenedorMenu > a {  /*Utilizamos selectores avanzados en lugar de clases */
     background-color: lightgreen;
     border: 2px solid black;
     border-radius: 5px;
@@ -24,6 +24,9 @@
     margin: 2pt;
     padding: 2pt;
     font-size: 12pt;
+}
+.bloqueInfo > div {
+    flex-direction: row;
 }
 .menu{
     justify-content:flex-start;
@@ -43,14 +46,22 @@ h4{font-size:8pt;}
 
 p{font-size: 12pt;}
 
-.header, .articulo, .lateral, .footer{
+.header, .articulo, .lateral, .footer {
     flex-grow: 1;
     flex-basis: 100%;
     padding: 10pt;
 }
+
+.desambiguacion:before {
+    content: "Desambiguación: "
+}
+.desambiguacion {
+    background: rgb(255, 0, 0, .5); 
+    padding: 2px; 
+}
 @media all and (max-width: 600px){
     .lateral {flex: 1 1 auto;}
-    .flex-containerh {flex-direction: column;} /*listo */
+    .contenedorMenu {flex-direction: column;} /*listo */
     .delimitador {/*listo */
         position: relative;/*listo */
         width: 100%;/*listo */
@@ -64,6 +75,11 @@ p{font-size: 12pt;}
         max-width: 560px;/*listo */
         width: 100%;/*listo */
         height: 100%;/*listo */
+    }
+    .bloqueInfo {flex-direction: column;}
+    .img {
+        width: 100%;
+        height: auto;
     }
 
 }

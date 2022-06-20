@@ -16,7 +16,7 @@
 <body>
 
     <nav>
-        <div>
+        <div class="contenedorMenu">
             <a class="menu" href="index.html"><i class="fa-solid fa-timeline"></i> Un poco de info</a>
             <a class="menu" href="02calculadora.html"><i class="fa-solid fa-calculator"></i> Calculadora</a>
             <a class="menu" href="03contacto.html"><i class="fa-solid fa-envelope"></i> Contactanos!</a>
@@ -32,7 +32,7 @@
             <fieldset name="fglucosa">
                 <legend>Sobre la glucosa</legend>
                 <p>Unidades de glucosa en sangre</p>
-                <input id="glucEnSangre" type="number" name="glucosaEnSangre" minlength="1" maxlength="4" placeholder="(solo números)">
+                <input id="glucEnSangre" type="number" name="glucosaEnSangre" minlength="1" maxlength="4" placeholder="(solo números)mg/100 ml">
                 <p>¿Cuántas gramos de carbohidratos por unidades de insulina te indicaron?</p>
                 <input id="carboPorInsu" type="number" name="carbohidratosPorInsulina" minlength="1" maxlength="3" placeholder="(solo números)">
             </fieldset>
@@ -47,11 +47,22 @@
         <script>
             var insuAplica, finalGlucosa, glucEnSangre, carboPorInsu, carboAIngerir, aumentaGluco;
             function obtenerDatos(){
+/*                 if (Number.isNaN(document.getElementById("glucEnSangre").value)){
+                    return alert("Por favor ingresá solo números.")
+                } */
                 glucEnSangre = parseInt(document.getElementById("glucEnSangre").value);
                 carboPorInsu = parseInt(document.getElementById("carboPorInsu").value);
                 carboAIngerir = parseInt(document.getElementById("carboAIngerir").value);
                 aumentaGluco = ((50/carboPorInsu) * carboAIngerir);
-                if ((glucEnSangre + aumentaGluco) > 140) {
+                if (glucEnSangre <= 20) {
+                    return alert("Con ese valor de glucosa en sangre seguramente estarías en coma, por favor colocá algún valor válido!")
+                } else if (carboPorInsu <= 0) {
+                    return alert("Necesitamos saber cuanta insulina te recomendaron aplicarte!")
+                } else if (carboAIngerir < 0) {
+                    return alert('Dificilmente se puedan "devolver" carbohidratos...')
+                } else if (Number.isNaN(glucEnSangre)||Number.isNaN(aumentaGluco)) {
+                    return alert("Indicá valores válidos")
+                } else if ((glucEnSangre + aumentaGluco) > 140) {
                     insuAplica = Math.ceil((glucEnSangre + aumentaGluco - 120)/(50));
                     finalGlucosa = (glucEnSangre + aumentaGluco) - insuAplica * 50;
                 } else {
@@ -61,7 +72,7 @@
                 return alert("Aplicate " + insuAplica + " dosis de insulina para quedar en " + parseInt(finalGlucosa) + " de glucosa en sangre");
             }
         </script>
-
+        <input type="submit" value="Enviar" onclick="validacion()">
         <input type="submit" value="Enviar" onclick="obtenerDatos()">
         </fieldset>
     </main>
