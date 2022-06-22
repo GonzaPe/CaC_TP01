@@ -1,3 +1,5 @@
+
+
 body {
     background-color: rgba(161, 161, 184, 0.781);
     color: #000;
@@ -32,9 +34,7 @@ body {
     padding: 2pt;
     font-size: 12pt;
 }
-.bloqueInfo > div {
-    flex-direction: row;
-}
+
 .menu{
     justify-content:flex-start;
     flex-shrink: inherit;
@@ -62,8 +62,30 @@ p{font-size: 12pt;}
     background: rgb(255, 0, 0, .5); 
     padding: 2px; 
 }
+
+.bloqueInfo {
+    align-content:flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: yellowgreen;
+    height: 100%;
+}
+
+.bloqueInfo > div {
+    background-color: green;
+    margin: 10px; /* llevar a 0 */
+    padding: 0px;
+}
+
+.texto {
+    width: 500px;
+}
+
+.imagen {
+    max-width: 50%;
+}
+
 @media all and (max-width: 600px){
-    .lateral {flex: 1 1 auto;}
     .contenedorMenu {flex-direction: column;} /*listo */
     .delimitador {/*listo */
         position: relative;/*listo */
@@ -87,15 +109,13 @@ p{font-size: 12pt;}
 
 }
 @media all and (max-width: 800px){
-    .articulo{flex: 2 0 auto;}
-    .articulo{order: 1;}
-    .lateral{order: 2;}
-    .footer{order: 3;}
+    .video {
+        justify-self: center;
+    }
 }
 
 .header{background-color: rgb(255, 199, 126);}
 .articulo{background-color: rgb(175, 175, 175);}
-.lateral{background-color: yellow;}
 .footer{background-color: rgb(170, 230, 230);}
 .menu:hover {
     animation-name: cambiarColor;
