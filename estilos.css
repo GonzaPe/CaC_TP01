@@ -67,12 +67,12 @@ p{font-size: 12pt;}
     align-content:flex-start;
     flex-direction: row;
     flex-wrap: nowrap;
-    background-color: yellowgreen;
+    background-color: rgb(202, 205, 50);
     height: 100%;
 }
 
 .bloqueInfo > div {
-    background-color: green;
+    background-color: rgb(19, 112, 39);
     margin: 10px; /* llevar a 0 */
     padding: 0px;
 }
