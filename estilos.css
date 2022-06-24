@@ -78,11 +78,11 @@ p{font-size: 12pt;}
 }
 
 .texto {
-    width: 500px;
+    width: 100%;
 }
 
 .imagen {
-    max-width: 50%;
+    max-width: 100%;
 }
 
 @media all and (max-width: 600px){
@@ -98,13 +98,44 @@ p{font-size: 12pt;}
         top: 0;/*listo */
         left: 0;/*listo */
         max-width: 560px;/*listo */
-        width: 100%;/*listo */
+        width: 100%;/*listo, quedate tranqui que no se achica porque está el elemento del bloqueinfo con 500px que hace que no se pueda reducir */
         height: 100%;/*listo */
     }
-    .bloqueInfo {flex-direction: column;}
+    .bloqueInfo {
+        display: flex;
+        flex-direction: column; /* ok */   
+        -webkit-box-align: center;
+        box-align: center;  
+        align-items: center;
+    
+        background-color: rgb(224, 169, 169);
+    }
+    .imagen{
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        flex: 1 1 auto; 
+
+        padding: 10px;
+        margin: 10px;
+
+        background-color: green;
+        border: 1px solid red;
+    }
     .img {
-        width: 100%;
-        height: auto;
+        object-fit: contain;
+    }
+    .texto {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        flex: 1 1 auto; 
+
+        padding: 10px;
+        margin: 10px;
+
+        text-align: left; /* listo */
     }
 
 }
