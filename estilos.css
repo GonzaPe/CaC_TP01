@@ -17,7 +17,7 @@ body {
     display: inline-flex;   /* Esta propiedad define al div como contenedor flex*/
     flex-direction: row; /*listo */
     flex-wrap: nowrap; /*listo */
-    background-color: rgba(255, 0, 0, 0);/* "transparente" */
+    background-color: rgb(77, 62, 62);/* "transparente" */
     height: 1;  /*listo */
     align-content:flex-start;
 }
@@ -38,7 +38,6 @@ body {
 .menu{
     justify-content:flex-start;
     flex-shrink: inherit;
-    position: sticky;
     top: 1%;
 }
 
@@ -86,7 +85,13 @@ p{font-size: 12pt;}
 }
 
 @media all and (max-width: 600px){
-    .contenedorMenu {flex-direction: column;} /*listo */
+    .contenedorMenu {
+        flex-direction: column;
+/*         width: 100%; (la idea es que los botones ocupen la totalidad del espacio disponible y al llegar a 600 pasen a dividirse solo una fila en 3 secciones ocupando la totalidad y al llegar a 800 se queden en ese tamaño en el margen izquierdo */
+    } /*listo */
+    .contenedorMenu>a{
+        width: ;
+    }
     .delimitador {/*listo */
         position: relative;/*listo */
         width: 100%;/*listo */
@@ -109,16 +114,7 @@ p{font-size: 12pt;}
         align-items: center;
         background-color: rgb(224, 169, 169);
     }
-    .imagen{
-        flex: 1 1 auto; 
-        padding: 10px;
-        margin: 10px;
-        background-color: green;
-        border: 1px solid red;
-/*         width: 100%;
- */    }
-    .img {
-        width: 100%;
+
     }
     .texto {
         flex: 1 1 auto; 
@@ -129,6 +125,10 @@ p{font-size: 12pt;}
 
 }
 @media all and (max-width: 800px){
+    .contenedorMenu {
+        background-color: rgb(109, 167, 182);/* "transparente" */
+        align-content:flex-start;
+    }
     .video {
         justify-self: center;
     }
