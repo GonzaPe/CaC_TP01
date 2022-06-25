@@ -115,9 +115,10 @@ p{font-size: 12pt;}
         margin: 10px;
         background-color: green;
         border: 1px solid red;
-    }
+/*         width: 100%;
+ */    }
     .img {
-        object-fit: contain;
+        width: 100%;
     }
     .texto {
         flex: 1 1 auto; 
