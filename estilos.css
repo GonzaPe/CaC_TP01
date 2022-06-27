@@ -17,7 +17,7 @@ body {
     display: inline-flex;   /* Esta propiedad define al div como contenedor flex*/
     flex-direction: row; /*listo */
     flex-wrap: nowrap; /*listo */
-    background-color: rgb(77, 62, 62);/* "transparente" */
+    background-color: rgba(77, 62, 62, 0);/* "transparente" */
     height: 1;  /*listo */
     align-content:flex-start;
 }
